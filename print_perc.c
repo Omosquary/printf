@@ -7,7 +7,7 @@
  * Return: number of characters printed
  */
 
-int _print_perc(va_list args)
+int _print_perc()
 {
 
 	return (_putchar('%'));

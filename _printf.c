@@ -12,8 +12,7 @@
 int _printf(const char * const format, ...)
 {
 	va_list args;
-	int i = 0, x = 0, output = 0, num = 0;
-	char *ptr = NULL;
+	int i = 0, output = 0;
 	int (*func)(va_list);
 
 	va_start(args, format);
