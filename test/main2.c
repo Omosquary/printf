@@ -7,6 +7,8 @@ int main(void)
 	printf("Hello %c Rofiat\n", 'A');
 	_printf("Hello %s Rofiat\n", "World");
 	printf("Hello %s Rofiat\n", "World");
+	_printf("%%\n");
+	printf("%%\n");
 
 	return (0);
 }
