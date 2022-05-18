@@ -2,15 +2,15 @@
 #include <stdarg.h>
 
 /**
- * _print_int - is a function that prints integers
+ * _print_dec - is a function that prints decimal
  * @args: Receives the argument passed
  * Return: Value.
  */
 
-int _print_int(va_list args)
+int _print_dec(va_list args)
 {
 	int n = va_arg(args, int);
-	int len = 0, powten = 1, j, digit, count = 0, num;
+	int len, powten, j, digit, count = 0, num;
 
 	if (n != 0)
 	{
@@ -20,11 +20,13 @@ int _print_int(va_list args)
 			count++;
 		}
 		num = n;
+		len = 0;
 		while (num != 0)
 		{
 			num /= 10;
 			len++;
 		}
+		powten = 1;
 		for (j = 1; j <= len - 1; j++)
 			powten *= 10;
 		for (j = 1; j <= len; j++)
@@ -46,3 +48,4 @@ int _print_int(va_list args)
 	}
 	return (count);
 }
+

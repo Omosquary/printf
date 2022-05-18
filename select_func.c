@@ -15,8 +15,10 @@ int (*_select_func(char c))(va_list)
 		return (_print_str);
 	if (c == '%')
 		return (_print_perc);
-	if (c == 'd')
+	if (c == 'i')
 		return (_print_int);
+	if (c == 'd')
+		return (_print_dec);
 
 	return (NULL);
 }
