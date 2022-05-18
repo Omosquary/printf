@@ -11,6 +11,10 @@
 
 int _printf(const char * const format, ...)
 {
+	va_list args;
+	int i = 0, x = 0, output = 0;
+	char *ptr = NULL;
+
 	va_start(args, format);
 
 	while (format[i] != '\0')
