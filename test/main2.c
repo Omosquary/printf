@@ -11,6 +11,8 @@ int main(void)
 	n = _printf("%%\n");
 	printf("%d\n", n);
 	n = printf("%%\n");
+	_printf("%d\n", 12);
+	printf("%d\n", 12);
 	printf("%d\n", n);
 
 	return (0);
