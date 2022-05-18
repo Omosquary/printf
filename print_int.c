@@ -10,7 +10,7 @@
 int _print_int(va_list args)
 {
 	int n = va_arg(args, int);
-	int len = 0, powten = 1, j, digit, count = 0, num;
+	int length = 0, power = 1, k, digit, count = 0, number;
 
 	if (n != 0)
 	{
@@ -19,24 +19,24 @@ int _print_int(va_list args)
 			_putchar('-');
 			count++;
 		}
-		num = n;
-		while (num != 0)
+		number = n;
+		while (number != 0)
 		{
-			num /= 10;
-			len++;
+			number /= 10;
+			length++;
 		}
-		for (j = 1; j <= len - 1; j++)
-			powten *= 10;
-		for (j = 1; j <= len; j++)
+		for (k = 1; k <= length - 1; k++)
+			power *= 10;
+		for (k = 1; k <= length; k++)
 		{
-			digit = n / powten;
+			digit = n / power;
 			if (n < 0)
 				_putchar((digit * -1) + 48);
 			else
 				_putchar(digit + '0');
 			count++;
-			n -= digit * powten;
-			powten /= 10;
+			n -= digit * power;
+			power /= 10;
 		}
 	}
 	else
