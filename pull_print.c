@@ -11,6 +11,9 @@
  **/
 int pull_print(char c, va_list *ap)
 {
+	int i = 0, x = 0, output = 0;
+	va_list args;
+	char *ptr = NULL;
 	va_start(args, format);
 
 	while (format[i] != '\0')
