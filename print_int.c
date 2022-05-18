@@ -9,42 +9,40 @@
 
 int _print_int(va_list args)
 {
-	int n = va_arg(args, int);
-	int len, powten, j, digit, count = 0, num;
+	int number = va_arg(args, int);
 
-	if (n != 0)
+	int size, digit, result;
+	long counter, sign;
+
+	sign = 1;
+	digit = 0;
+	size = 1;
+	counter = number;
+	result = 0;
+
+	if (number < 0)
 	{
-		if (n < 0)
-		{
-			_putchar('-');
-			count++;
-		}
-		num = n;
-		len = 0;
-		while (num != 0)
-		{
-			num /= 10;
-			len++;
-		}
-		powten = 1;
-		for (j = 1; j <= len - 1; j++)
-			powten *= 10;
-		for (j = 1; j <= len; j++)
-		{
-			digit = n / powten;
-			if (n < 0)
-				_putchar((digit * -1) + 48);
-			else
-				_putchar(digit + '0');
-			count++;
-			n -= digit * powten;
-			powten /= 10;
-		}
+		_putchar('-');
+		sign = -1;
+		counter *= sign;
+		result++;
 	}
-	else
+
+	for (; counter >= 10; size++)
 	{
-		_putchar('0');
-		return (1);
+		counter = counter / 10;
 	}
-	return (count);
-}
+
+	counter = sign * (long)number;
+
+	while (size >= 2)
+	{
+		digit = (counter / exponent(10, size - 1));
+		_putchar(digit + '0');
+		counter = counter % exponent(10, size - 1);
+		size--;
+		result++;
+	}
+	_putchar(counter % 10 + '0');
+	result++;
+	return (result);
