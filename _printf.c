@@ -14,43 +14,26 @@ int _printf(const char * const format, ...)
 	va_list args;
 	int i = 0, x = 0, output = 0, num = 0;
 	char *ptr = NULL;
+	int (*func)(va_list);
 
 	va_start(args, format);
 
 	while (format[i] != '\0')
 	{
-		if (format[i] != '%')
+		if (format[i] == '%')
 		{
-			_putchar(format[i]);
-			output++;
+			func = _select_func(format[i + 1]);
+			/* output++ */
+			if (func != NULL)
+			{
+			output += func(args);
+			i++;
+			}
 		}
 		else
 		{
-			/* format[i] == '%' */
-			if (format[i + 1] == 'c')
-			{
-				_print_char(va_arg(args, int));
-				output++;
-				i++;
-			}
-			else if (format[i + 1] == 's')
-			{
-				i++;
-				ptr = va_arg(args, char *);
-				_print_str(ptr);
-			}
-			else if (format[i + 1] == '%')
-			{
-				i++;
-				_print_char('%');
-				output++;
-			}
-			else if (format[i + 1] == 'd')
-			{
-				i++;
-				num = va_arg(args, int);
-			}
-
+			_putchar(format[i]);
+			output++;
 		}
 		i++;
 	}

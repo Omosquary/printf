@@ -1,14 +1,17 @@
 #include "main.h"
+#include <stdarg.h>
 
 /**
  * _print_str - is a function used to display a string
- * @s: input
+ * @args: receives the list of arguments passed
  * Return: Value
  */
 
-int _print_str(char *s)
+int _print_str(va_list args)
 {
 	int x = 0;
+	char *s = va_arg(args, char *);
+
 	while (s[x] != '\0')
 	{
 		_putchar(s[x]);
