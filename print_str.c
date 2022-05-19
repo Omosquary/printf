@@ -11,16 +11,12 @@
 
 int _print_str(va_list args)
 {
-	int x = 0;
+	unsigned int x = 0;
 	char *s = va_arg(args, char *);
 
-	if (s == NULL)
-		s = "(null)";
-
-	while (s[x])
+	for (x = 0; s[x] != '\0'; x++)
 	{
 		_putchar(s[x]);
-		x++;
 	}
 	return (x);
 }
