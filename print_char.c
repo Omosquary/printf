@@ -1,5 +1,7 @@
 #include "main.h"
 #include <stdarg.h>
+#include <unistd.h>
+#include <stdlib.h>
 
 /**
  * _print_char - is a function to print character

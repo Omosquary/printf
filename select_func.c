@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdarg.h>
 #include <stddef.h>
+#include <unistd.h>
 #include <stdio.h>
 /**
  * _select_func - is a function to select respective functions

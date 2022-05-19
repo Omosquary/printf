@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <unistd.h>
 
 /**
  * _print_perc - is a function to print character
