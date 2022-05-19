@@ -31,11 +31,11 @@ int _printf(const char * const format, ...)
 		}
 		else
 		{
-			output += _putchar(format[i]);
+			_putchar(format[i]);
+			output++;
 		}
 		i++;
 	}
-	_putchar(-1);
 	va_end(args);
 	return (output);
 }
