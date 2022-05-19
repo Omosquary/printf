@@ -1,16 +1,17 @@
 #include "main.h"
-#include <stdarg.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * _print_perc - is a function to print character
- * @args: receives the arguments
- * Return: number of characters printed
+ * Return: 1 on success.
  */
 
-int _print_perc()
+int _print_perc(void)
 {
 
-	return (_putchar('%'));
+	_putchar('%');
+	return (1);
 
 }
 
