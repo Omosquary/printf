@@ -7,7 +7,7 @@
  * Return: 1 on success.
  */
 
-int _print_perc(void)
+int _print_perc()
 {
 
 	_putchar('%');

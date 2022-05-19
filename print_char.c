@@ -4,13 +4,14 @@
 /**
  * _print_char - is a function to print character
  * @args: receives the arguments
- * Return: number of characters printed
+ * Return: 1 on success.
  */
 
 int _print_char(va_list args)
 {
 	char c = va_arg(args, int);
 
-	return (_putchar(c));
+	_putchar(c);
+	return (1);
 
 }
