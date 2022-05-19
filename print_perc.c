@@ -1,17 +1,19 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdarg.h>
 
 /**
  * _print_perc - is a function to print character
- * Return: 1 on success.
+ * @args: va_list arguements from _printf
+ * Return: number of character printed
  */
 
-int _print_perc()
+int _print_perc(va_list args)
 {
 
-	_putchar('%');
-	return (1);
+	(void)args;
+	return (_putchar('%'));
 
 }
 
