@@ -2,6 +2,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <stddef.h>
+#include <limits.h>
 
 /**
  * _printf - prints formatted data to stdout
@@ -22,7 +23,6 @@ int _printf(const char * const format, ...)
 		if (format[i] == '%')
 		{
 			func = _select_func(format[i + 1]);
-			/* output++ */
 			if (func != NULL)
 			{
 			output += func(args);
@@ -31,11 +31,11 @@ int _printf(const char * const format, ...)
 		}
 		else
 		{
-			_putchar(format[i]);
-			output++;
+			output += _putchar(format[i]);
 		}
 		i++;
 	}
+	_putchar(-1);
 	va_end(args);
 	return (output);
 }
