@@ -21,6 +21,8 @@ int (*_select_func(const char c))(va_list)
 		return (_print_int);
 	else if (c == 'd')
 		return (_print_dec);
+	else if (c == 'b')
+		return (_print_bin);
 
 	return (NULL);
 }
