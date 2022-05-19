@@ -10,7 +10,7 @@ int _print_int(va_list args);
 int _print_dec(va_list args);
 int _printf(const char *format, ...);
 int _print_perc(va_list args);
-int (*_select_func(char c))(va_list);
+int (*_select_func(const char c))(va_list);
 
 /**
  * struct printHandler - struct to choose the right function depending
