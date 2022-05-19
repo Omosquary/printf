@@ -14,6 +14,9 @@ int _print_str(va_list args)
 	unsigned int x = 0;
 	char *s = va_arg(args, char *);
 
+	if (s == NULL)
+		s = "(null)";
+
 	for (x = 0; s[x] != '\0'; x++)
 	{
 		_putchar(s[x]);
