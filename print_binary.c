@@ -10,10 +10,6 @@
 
 int _print_bin(va_list args)
 {
-	unsigned int number = va_arg(args, int);
-
-	char *ptr = convert(number, 2, 0);
-
-	return (_putchar(str));
+	int n = va_arg(args, int);
 }
 
