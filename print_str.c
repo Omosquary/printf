@@ -22,5 +22,5 @@ int _print_str(va_list args)
 		_putchar(s[x]);
 		x++;
 	}
-	return (x);
+	return (1);
 }
