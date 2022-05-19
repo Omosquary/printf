@@ -28,10 +28,11 @@ int (*_select_func(const char c))(va_list)
 		return (_print_octal);
 	else if (c == 'u')
 		return (_print_unint);
-	else if (c == 'x')
+	/**else if (c == 'x')
 		return (_print_hex);
 	else if (c == 'X')
-		return (_print_HEX);
+		return (_print_HEX); 
+		*/
 
 	return (NULL);
 }
