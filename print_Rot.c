@@ -9,7 +9,7 @@
   */
 int _print_rot(va_list args)
 {
-	int j, i, count = 0;
+	int j, i;
 	char *r;
 	char input[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz";
 	char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLM nopqrstuvwxyzabcdefghijklm";
@@ -17,17 +17,21 @@ int _print_rot(va_list args)
 	r = va_arg(args, char *);
 	if (r == NULL)
 		r = "(null)";
-	for (j = 0; r[j] != '\0'; j++)
+	for (j = 0; r[j]; j++)
 	{
-		for (i = 0; input[i] != '\0'; i++)
+		if (r[j] < 'A' || (r[j] > 'Z' && r[j] < 'a') || r[j] > 'z')
+			_putchar(r[j]);
+		else
 		{
-			if (r[j] == input[i])
+			for (i = 0; i <= 52; i++)
 			{
-				_putchar(output[i]);
-				count++;
-				break;
+				if (r[j] == input[i])
+				{
+					_putchar(output[i]);
+				}
 			}
 		}
 	}
-	return (count);
+
+	return (j);
 }
