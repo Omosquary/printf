@@ -11,9 +11,6 @@
 
 int _print_char(va_list args)
 {
-	unsigned char c;
-
-	c = va_arg(args, int);
-	_putchar(c);
+	_putchar(va_arg(args, int));
 	return (1);
 }

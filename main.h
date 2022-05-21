@@ -16,17 +16,7 @@ int _print_unint(va_list args);
 int _print_x(va_list args);
 int _print_X(va_list args);
 int _print_hex(unsigned int n, unsigned int c);
-
-/**
- * struct printHandler - struct to choose the right function depending
- * on the format specifier passed to _printf()
- * @c: format specifier
- * @f: pointer to the correct printing function
- */
-typedef struct printHandler
-{
-	char c;
-	int (*f)(va_list);
-} ph;
+int _print_Rev(va_list args);
+int _print_rot(va_list args);
 
 #endif /* end MAIN_H */
