@@ -14,6 +14,6 @@ int _print_perc(va_list args)
 {
 
 	(void)args;
-	_putchar('%');
-	return (1);
+	return (_putchar('%'));
+/*	return (1);*/
 }
