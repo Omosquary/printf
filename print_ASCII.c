@@ -10,11 +10,11 @@
 
 int _print_S(va_list args)
 {
-	unsigned char *ptr = va_arg(args, char*);
-	int i;
+	char *ptr = va_arg(args, char*);
+	int i, count = 0;
 
 	if (ptr == NULL)
-		ptr = ("(null)");
+		ptr = "(null)";
 	else if (*ptr == '\0')
 		return (-1);
 
@@ -24,14 +24,15 @@ int _print_S(va_list args)
 		{
 			_putchar('\\');
 			_putchar('x');
+			count += 2;
 			if (i < 16)
-				_putchar('0');
+				count += _putchar('0');
 
 			_print_hex(ptr[i], 1);
 		}
 		else
-			_putchar(ptr[i]);
+			count += _putchar(ptr[i]);
 	}
 
-	return (i);
+	return (count);
 }
