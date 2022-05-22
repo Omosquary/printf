@@ -20,7 +20,7 @@ int _print_S(va_list args)
 
 	for (i = 0; ptr[i]; i++)
 	{
-		if (ptr[i] > 0 && (ptr[i] > 32 || ptr[i] >= 127))
+		if (ptr[i] > 0 && (ptr[i] < 32 || ptr[i] >= 127))
 		{
 			_putchar('\\');
 			_putchar('x');
