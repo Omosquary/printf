@@ -18,5 +18,6 @@ int _print_X(va_list args);
 int _print_hex(unsigned int n, unsigned int c);
 int _print_Rev(va_list args);
 int _print_rot(va_list args);
+int _print_S(va_list args);
 
 #endif /* end MAIN_H */

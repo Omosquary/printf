@@ -36,6 +36,8 @@ int (*_select_func(const char c))(va_list)
 		return (_print_Rev);
 	else if (c == 'R')
 		return (_print_rot);
+	else if (c == 'S')
+		return (_print_S);
 
 	return (NULL);
 }
